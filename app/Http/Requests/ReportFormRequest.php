@@ -24,6 +24,7 @@ class ReportFormRequest extends Request
     public function rules()
     {
         return [
+
             'starting_date' => 'required',
             'ending_date'=> 'required',
         ];
