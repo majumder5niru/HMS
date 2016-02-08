@@ -27,7 +27,6 @@ class IpatientFormRequest extends Request
             'patient_name' => 'required',
             'ind_patient_id'=> 'required',
             'arrival_date'=> 'required',
-            'discharge_date'=>'required'
-
+        ];
     }
 }

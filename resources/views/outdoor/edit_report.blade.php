@@ -107,13 +107,13 @@
 									<label class="allLabel">Gender</label>
 									<div class="radio">
 										<label>
-									    <input type="radio" name="gender"  value="male" <?php if($gender== "male") { echo 'checked="checked"'; } ?>>Male
+									    <input type="radio" name="gender"  value="Male" <?php if($gender== "Male") { echo 'checked="checked"'; } ?>>Male
 									  	</label>
 									  	<label>
-									    	<input type="radio" name="gender"  value="female" <?php if($gender== "female") { echo 'checked="checked"'; } ?>>Female
+									    	<input type="radio" name="gender"  value="Female" <?php if($gender== "Female") { echo 'checked="checked"'; } ?>>Female
 									  	</label>
 									   	<label>
-									    	<input type="radio" name="gender"  value="otehrs" <?php if($gender== "other") { echo 'checked="checked"'; } ?>>Others
+									    	<input type="radio" name="gender"  value="Otehr" <?php if($gender== "Other") { echo 'checked="checked"'; } ?>>Others
 									  </label>
 									</div>
 								</div>	

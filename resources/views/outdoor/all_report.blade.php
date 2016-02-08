@@ -39,6 +39,7 @@
                         <h5>Sonaimuri,Noakhali</h5></p>
                         <h2>All Reports</h2>
                     </center>
+                    
                     <table class="table">
                         <thead>
                             <tr>
@@ -59,7 +60,7 @@
                                 <tr>
                                     <td>{!! $report->id !!} </td>
                                     <td>{!! $report->patient_id !!}</td>
-                                    <td><a href="{!! action('PatientsController@show_report', $report->patient_id) !!}">{!! $report->patient_name !!}</a></td>
+                                    <td><a href="{!! action('PatientsController@show_report', $report->patient_id) !!}">{!! ucwords($report->patient_name) !!}</a></td>
                                     <td>{!! $report->gender !!}</td>
                                     <td>{!! $report->age !!}</td>
                                     <td>{!! $report->admission_date !!}</td>
@@ -71,6 +72,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                  
 				</div>
 				<div class="col-md-2"></div>
 			</div>

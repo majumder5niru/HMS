@@ -118,7 +118,7 @@
                                 <tr>
                                     <td>{!! $data->id !!} </td>
                                     <td>{!! $data->patient_id !!}</td>
-                                    <td>{!! $data->patient_name !!}</td>
+                                    <td>{!! ucwords($data->patient_name)!!}</td>
                                     <td>{!! $data->gender !!}</td>
                                     <td>{!! $data->age !!}</td>
                                     <td>{!! $data->admission_date !!}</td>
@@ -151,7 +151,7 @@
                                 <tr>
                                     <td>{!! $data->id !!} </td>
                                     <td>{!! $data->ind_patient_id !!}</td>
-                                    <td>{!! $data->patient_name !!}</td>
+                                    <td>{!! ucwords($data->patient_name) !!}</td>
                                     <td>{!! $data->gender !!}</td>
                                     <td>{!! $data->age !!}</td>
                                     <td>{!! $data->arrival_date !!}</td>

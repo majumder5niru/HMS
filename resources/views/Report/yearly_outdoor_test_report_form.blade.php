@@ -51,9 +51,7 @@
 				</div>
 			<div class="row">
 				<div class="col-md-6">
-
 					<form action="{!! action('ReportsController@summary_outdoor_report_yearly') !!}" method="post">
-
 						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 							@if (isset($errors) && $errors->any())
 	   							@foreach ($errors->all() as $error)

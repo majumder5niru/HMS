@@ -28,7 +28,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/show_indoor_report/{id}', 'IpatientsController@show_report');
 	Route::get('/all_indoor_report', 'IpatientsController@show_all_report');
 	//generating report of total bill for individual month and range of month
-
 	Route::get('/search_form', 'ReportsController@search_form');
 	Route::post('/search_form', 'ReportsController@search_option');
 	//Toal bill in a range of days
@@ -58,7 +57,6 @@ Route::group(['middleware' => ['web']], function () {
 	//search by name and id
 	Route::get('/search_by_name_id', 'PatientsController@index');
 	Route::post('/search_by_name_id', 'PatientsController@search_by_name_id');
-
 
 	Route::get('/user/registration', 'UsersController@show_user_registration_form');
 	Route::post('/user/registration', 'UsersController@store_user_and_assign_role_to_them');

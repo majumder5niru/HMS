@@ -121,13 +121,13 @@
 									<label class="allLabel">Gender</label>
 									<div class="radio">
 										<label>
-									    	<input type="radio" name="gender"  value="male" id="option1"selected required>Male
+									    	<input type="radio" name="gender"  value="Male" id="option1"selected required <?php if(Request::old('gender')== "Male") { echo 'checked="checked"'; } ?>>Male
 									  	</label>
 									  	<label>
-									    	<input type="radio" name="gender"  value="female" required >Female
+									    	<input type="radio" name="gender"  value="Female" required <?php if(Request::old('gender')== "Female") { echo 'checked="checked"'; } ?>>Female
 									  	</label>
 									   	<label>
-									    	<input type="radio" name="gender"  value="other" required>Others
+									    	<input type="radio" name="gender"  value="Other" required <?php if(Request::old('gender')== "Other") { echo 'checked="checked"'; } ?>>Others
 									  </label>
 									</div>
 								</div>	

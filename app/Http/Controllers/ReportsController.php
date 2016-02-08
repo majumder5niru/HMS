@@ -20,7 +20,6 @@ class ReportsController extends Controller
     public function search_form(){
     	return view('Report.search_form');
     }
-
     public function search_option(Request $request){
         $month = $request->input('month');
         $year = $request->input('year');
@@ -49,7 +48,6 @@ class ReportsController extends Controller
     public function yearly_report(){
         return view('Report.yearly_report_form');
     }
-
     public function summary_year(Request $request){
         $outdoors = array();
         $indoors = array();
@@ -84,7 +82,6 @@ class ReportsController extends Controller
     public function monthly_outdoor_test_report(){
         return view('Report.monthly_outdoor_test_form');
     }
-
     public function monthly_outdoor_test(Request $request){
         $month = $request->input('month');
         $year = $request->input('year');
@@ -109,7 +106,6 @@ class ReportsController extends Controller
         return view('Report.monthly_indoor_test_form');
     }
     //store month and year for balance of test of particular month
-
     public function monthly_indoor_test(Request $request){
         $month = $request->input('month');
         $year = $request->input('year');
@@ -139,7 +135,6 @@ class ReportsController extends Controller
     public function outdoor_test_report_range(){
      return view('Report.outdoor_test_report_range_form');   
     }
-
     public function outdoor_test_summary_range(ReportFormRequest $request){
         $start_date = $request->input('starting_date');
         $end_date = $request->input('ending_date');
@@ -161,7 +156,6 @@ class ReportsController extends Controller
     public function indoor_test_report_range(){
         return view('Report.indoor_test_report_range_form');
     }
-
     public function indoor_test_summary_range(ReportFormRequest $request){
         $start_date = $request->input('starting_date');
         $end_date = $request->input('ending_date');
@@ -189,7 +183,6 @@ class ReportsController extends Controller
     public function yearly_outdoor_test_report(){
         return view('Report.yearly_outdoor_test_report_form');
     }
-
     public function summary_outdoor_report_yearly(Request $request){
         $months = array();
         $xrays = array();
@@ -246,7 +239,8 @@ class ReportsController extends Controller
     //Indoor test bill yearly
     public function yearly_indoor_test_report(){
         return view('Report.yearly_indoor_test_report_form');
-    }    
+    }
+    
     public function summary_indoor_report_yearly(Request $request){
         $months = array();
         $xrays = array();

@@ -53,7 +53,7 @@
 						<h2>Bill Report</h2>
 					</center>
 					<div class="col-md-4">
-						<p>Pateint Name : {!!$patient->patient_name!!}</p><br>
+						<p>Pateint Name : {!!ucwords($patient->patient_name)!!}</p><br>
 						<p>Father's Name : {!!$patient->father_name!!}</p><br>
 						<p>Consulting Dr. Name : {!!$patient->consult_dr!!}</p><br>
 						<p>Pateint ID : {!!$patient->patient_id!!}</p><br>

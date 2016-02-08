@@ -27,7 +27,7 @@ class IpatientsController extends Controller
     }
     public function store_data(IpatientFormRequest $request){
     	 $indoor_patient = new Indoor_patient(array(
-	        'patient_name' => $request->get('patient_name'),
+	        'patient_name' => strtolower($request->get('patient_name')),
 	        'ind_patient_id' => $request->get('ind_patient_id'),
 	        'father_name'=> $request->get('father_name'),
 	        'consult_dr'=> $request->get('consult_dr'),
@@ -114,7 +114,7 @@ class IpatientsController extends Controller
    public function update_indoor_report($id, IpatientFormRequest $request){
 		
         $indoor_report = Indoor_patient::whereId($id)->firstOrFail();
-		$indoor_report->patient_name = $request->get('patient_name');
+		$indoor_report->patient_name = strtolower($request->get('patient_name'));
 		$indoor_report->ind_patient_id = $request->get('ind_patient_id');
 		$indoor_report->father_name = $request->get('father_name');
 	    $indoor_report->consult_dr = $request->get('consult_dr');

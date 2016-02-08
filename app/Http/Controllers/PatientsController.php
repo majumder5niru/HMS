@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PatientFormRequest;
@@ -22,17 +23,17 @@ class PatientsController extends Controller
 		return view('outdoor.index');
 	}
 	public function search_by_name_id(Request $request){
-		//$all_data = Patient::orderBy('patient_name')->get();
 		$patient_name = $request->input('patient_name');
 		$patient_id = $request->input('patient_id');
 		if(!empty($patient_name)&&!empty($patient_id)){
-			$all_data = DB::table('patients')->Where('patient_name','LIKE','%'.$patient_name.'%')->get();
-			$all = DB::table('indoor_patients')->Where('patient_name','LIKE','%'.$patient_name.'%')->get();
+			$all_data = DB::table('patients')->Where('patient_name','LIKE','%'.strtolower($patient_name).'%')->get();
+			$all = DB::table('indoor_patients')->Where('patient_name','LIKE','%'.strtolower($patient_name).'%')->get();
 			$all_data = DB::table('patients')->Where('patient_id','LIKE','%'.$patient_id.'%')->get();
 			$all = DB::table('indoor_patients')->Where('ind_patient_id','LIKE','%'.$patient_id.'%')->get();
 		}elseif(!empty($patient_name)){
-			$all_data = DB::table('patients')->Where('patient_name','LIKE','%'.$patient_name.'%')->get();
-			$all = DB::table('indoor_patients')->Where('patient_name','LIKE','%'.$patient_name.'%')->get();
+			$all_data = DB::table('patients')->Where('patient_name','LIKE','%'.strtolower($patient_name).'%')->get();
+			//$all_data = DB::table('patients')->Where('patient_name','LIKE','%'.$patient_name.'%')->get();
+			$all = DB::table('indoor_patients')->Where('patient_name','LIKE','%'.strtolower($patient_name).'%')->get();
 		}elseif (!empty($patient_id)) {
 			$all_data = DB::table('patients')->Where('patient_id','LIKE','%'.$patient_id.'%')->get();
 			$all = DB::table('indoor_patients')->Where('ind_patient_id','LIKE','%'.$patient_id.'%')->get();
@@ -47,7 +48,7 @@ class PatientsController extends Controller
 	}
  	public function store_data(PatientFormRequest $request){
 	    $patient = new Patient(array(
-	        'patient_name' => $request->get('patient_name'),
+	        'patient_name' => strtolower($request->get('patient_name')),
 	        'patient_id' => $request->get('patient_id'),
 	        'father_name'=> $request->get('father_name'),
 	        'consult_dr'=> $request->get('consult_dr'),
@@ -128,7 +129,7 @@ class PatientsController extends Controller
                         ->withInput();
         }
 		$report = Patient::wherePatient_id($patient_id)->firstOrFail();
-		$report->patient_name = $request->get('patient_name');
+		$report->patient_name = strtolower($request->get('patient_name'));
 		$report->patient_id = $request->get('patient_id');
 		$report->father_name = $request->get('father_name');
 	    $report->consult_dr = $request->get('consult_dr');

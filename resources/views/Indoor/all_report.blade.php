@@ -60,7 +60,7 @@
                                 <tr>
                                     <td>{!! $report->id !!} </td>
                                     <td>{!! $report->ind_patient_id !!}</td>
-                                    <td><a href="{!! action('IpatientsController@show_report', $report->id) !!}">{!! $report->patient_name !!}</a></td>
+                                    <td><a href="{!! action('IpatientsController@show_report', $report->id) !!}">{!! ucwords($report->patient_name) !!}</a></td>
                                     <td>{!! $report->gender !!}</td>
                                     <td>{!! $report->age !!}</td>
                                     <td>{!! $report->arrival_date !!}</td>
