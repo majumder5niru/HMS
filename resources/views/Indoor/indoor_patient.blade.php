@@ -8,8 +8,6 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="{!! asset('assets/bootstrap/css/bootstrap.min.css') !!}">
-
-
 	    <link href="{!! asset('css/datepicker.css') !!}" rel="stylesheet">
 	    <script src="{!! asset('js/bootstrap-datepicker.js') !!}"></script>
 	    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
@@ -31,22 +29,20 @@
 	    </script>
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
+		 	
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
 			#date{
-				width:250px;
+				width:100%;
 				}
 			.input-group.input-append.date {
-		  		width: 250px;
+		  		width: 100%;
 			}
 		 	
 		 </style>
@@ -75,7 +71,7 @@
 				</nav>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<form action="{!! action('IpatientsController@store_data') !!}" method="post">
 								<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 									@if (isset($errors) && $errors->any())
@@ -89,7 +85,7 @@
     									</div>
 									@endif
 								<div class="form-group">
-									<label class="allLabel">Patient Name</label>
+									<label class="allLabel">Patient Name*</label>
 									<input type="text" name="patient_name" class="form-control" value="{{Request::old('patient_name')}}" >
 								</div>
 								<div class="form-group">
@@ -106,7 +102,7 @@
 										</select>	
 								</div>
 								<div class="form-group">
-									<label class="allLabel">Patient Id</label>
+									<label class="allLabel">Patient Id*</label>
 									<input type="text" name="ind_patient_id" class="form-control" value="{{Request::old('ind_patient_id')}}">
 								</div>
 								<div class="form-group">
@@ -182,48 +178,48 @@
 										<input type="text" name="reffered_dr" class="form-control" value="{{Request::old('reffered_dr')}}">
 								</div>			
 				</div>
-				<div class="col-md-4" id="div1">
+				<div class="col-md-3 col-md-offset-1" id="div1" >
 					
 					<div class="form-group">
 						<input type="hidden" name="digital_xray" value="0">
-						<input type="checkbox" name="digital_xray"  value="400"> Digital X-Ray &nbsp;
+						<input type="checkbox" name="digital_xray"  value="400" <?php if(Request::old('digital_xray')== "400") { echo 'checked="checked"'; } ?>> Digital X-Ray &nbsp;
 						<input type="hidden" name="ultrasonogram" value="0">
-						<input type="checkbox" name="ultrasonogram"  value="300"> 4D Ultrasonogram
+						<input type="checkbox" name="ultrasonogram"  value="300" <?php if(Request::old('ultrasonogram')== "300") { echo 'checked="checked"'; } ?>> 4D Ultrasonogram
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="ecg" value="0">
-						<input type="checkbox" name="ecg"  value="800"> ECG &nbsp;
+						<input type="checkbox" name="ecg"  value="800" <?php if(Request::old('ecg')== "800") { echo 'checked="checked"'; } ?>> ECG &nbsp;
 						<input type="hidden" name="digital_ecg" value="0">
-						<input type="checkbox" name="digital_ecg"  value="1000"> Digital ECG	
+						<input type="checkbox" name="digital_ecg"  value="1000" <?php if(Request::old('digital_ecg')== "1000") { echo 'checked="checked"'; } ?>> Digital ECG	
 					</div>
 						<div class="form-group">
 						<input type="hidden" name="endoscopy" value="0">
-						<input type="checkbox" name="endoscopy"  value="1000"> Endoscopy/Colonoscopy &nbsp;
+						<input type="checkbox" name="endoscopy"  value="1000" <?php if(Request::old('endoscopy')== "1000") { echo 'checked="checked"'; } ?>> Endoscopy/Colonoscopy &nbsp;
 						<input type="hidden" name="blood_grouping" value="0">
-						<input type="checkbox" name="blood_grouping"  value="150"> Blood Grouping
+						<input type="checkbox" name="blood_grouping"  value="150" <?php if(Request::old('blood_grouping')== "150") { echo 'checked="checked"'; } ?>> Blood Grouping
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="blood_cs" value="0">
-						<input type="checkbox" name="blood_cs"  value="300"> Blood For CS &nbsp;
+						<input type="checkbox" name="blood_cs"  value="300" <?php if(Request::old('blood_cs')== "300") { echo 'checked="checked"'; } ?>> Blood For CS &nbsp;
 						<input type="hidden" name="blood_cbc" value="0">
-						<input type="checkbox" name="blood_cbc"  value="350"> Blood For CBC
+						<input type="checkbox" name="blood_cbc"  value="350" <?php if(Request::old('blood_cbc')== "350") { echo 'checked="checked"'; } ?>> Blood For CBC
 					</div>
 					
 					<div class="form-group">
 						<input type="hidden" name="urine" value="0">
-						<input type="checkbox" name="urine"  value="200"> Urine Test &nbsp;
+						<input type="checkbox" name="urine"  value="200" <?php if(Request::old('urine')== "200") { echo 'checked="checked"'; } ?>> Urine Test &nbsp;
 						<input type="hidden" name="hbs_normal" value="0">
-						<input type="checkbox" name="hbs_normal"  value="250"> HBS Ag(Normal)
+						<input type="checkbox" name="hbs_normal"  value="250" <?php if(Request::old('hbs_normal')== "250") { echo 'checked="checked"'; } ?>> HBS Ag(Normal)
 					</div>
 					
 					<div class="form-group">
 						<input type="hidden" name="ct_scan" value="0">
-						<input type="checkbox" name="ct_scan"  value="1000"> CT Scan &nbsp;
+						<input type="checkbox" name="ct_scan"  value="1000" <?php if(Request::old('ct_scan')== "1000") { echo 'checked="checked"'; } ?>> CT Scan &nbsp;
 						<input type="hidden" name="stool" value="0">
-						<input type="checkbox" name="stool"  value="450"> Stool Test
+						<input type="checkbox" name="stool"  value="450" <?php if(Request::old('stool')== "450") { echo 'checked="checked"'; } ?>> Stool Test
 					</div>	
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3 col-md-offset-1">
 					<div class="form-group">
 						<label class="allLabel">Operation Bill</label>
 						<input type="number" name="operation_bill" class="form-control" value="{{Request::old('operation_bill')}}">
@@ -250,10 +246,10 @@
 					</div>
 					<div class="form-group">
 						<label class="allLabel">Arrival Time</label>
-						<input type="text" name="arrival_time" class="form-control" value="{{Request::old('arrival_time')}}">
+						<input type="text" name="arrival_time" class="form-control" value="{{Request::old('arrival_time')}}" placeholder="07:40 PM">
 					</div>
 					<div class="form-group">
-						<label class="allLabel">Arrival Date</label>
+						<label class="allLabel">Arrival Date*</label>
 						<div class="input-group input-append date" id="datePicker">
 	                		<input type="text" name="arrival_date" class="form-control" id = "date"value="{{Request::old('arrival_date')}}">
 	                		<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -261,7 +257,7 @@
 					</div>
 					<div class="form-group">
 						<label class="allLabel">Discharge Time</label>
-						<input type="text" name="discharge_time" class="form-control" value="{{Request::old('discharge_time')}}" placeholder="7:40 PM">
+						<input type="text" name="discharge_time" class="form-control" value="{{Request::old('discharge_time')}}" placeholder="07:40 PM">
 					</div>
 					<div class="form-group">
 						<label class="allLabel">Discharge Date</label>

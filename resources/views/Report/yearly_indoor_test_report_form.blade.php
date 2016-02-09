@@ -12,16 +12,14 @@
 	    
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
+		 	
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
 		 	
 		 </style>
@@ -50,7 +48,7 @@
 					</nav>
 				</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-3 col-md-offset-5">
 					<form action="{!! action('ReportsController@summary_indoor_report_yearly') !!}" method="post">
 						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 							@if (isset($errors) && $errors->any())
@@ -87,7 +85,7 @@
 						</div>
 						</form>
 				</div>
-				<div class="col-md-6"></div>
+				
 			</div>	
 		</div>
 	</div>

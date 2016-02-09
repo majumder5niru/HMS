@@ -8,44 +8,17 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="{!! asset('assets/bootstrap/css/bootstrap.min.css') !!}">
-	    <link href="{!! asset('css/datepicker.css') !!}" rel="stylesheet">
-	    <script src="{!! asset('js/bootstrap-datepicker.js') !!}"></script>
-	    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
-	    <script>
-		    $(function(){
-		        $('#datePicker')
-		            .datepicker({
-		            format: 'yyyy/mm/dd'
-		        })
-		    });
-	    </script>
-	    <script>
-		    $(function(){
-		        $('#datePicker1')
-		            .datepicker({
-		            format: 'yyyy/mm/dd'
-		        })
-		    });
-	    </script>
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
-		 	#date{
-				width:250px;
-				}
-			.input-group.input-append.date {
-		  		width: 250px;
-			}
+		 	
 		 </style>
 	</head>
 	<body>
@@ -71,7 +44,7 @@
 					</nav>
 				</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-3 col-md-offset-5">
 					<form action="{!! action('ReportsController@monthly_indoor_test') !!}" method="post">
 						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 							@if (isset($errors) && $errors->any())

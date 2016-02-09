@@ -68,8 +68,9 @@ class PatientsController extends Controller
 	        'blood_cbc' => $request->get('blood_cbc'),
 	        'urine' => $request->get('urine'),
 	        'hbs_normal' => $request->get('hbs_normal'),
-	        'commision' => $request->get('commision'),
+	       	'ct_scan'=> $request->get('ct_scan'),
 	        'stool' => $request->get('stool'),
+	        'commision' => $request->get('commision'),
 	    ));
 	    $patient->save();
 	    return redirect(action('PatientsController@edit_report', $patient->patient_id))->with('status', 'Your Information has been inserted!');
@@ -118,16 +119,6 @@ class PatientsController extends Controller
 	}
 
 	public function update_report($patient_id, Request $request){
-		 $validator = Validator::make($request->all(), [
-            'patient_name' => 'required',
-            'patient_id' => 'required',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('all_reports')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
 		$report = Patient::wherePatient_id($patient_id)->firstOrFail();
 		$report->patient_name = strtolower($request->get('patient_name'));
 		$report->patient_id = $request->get('patient_id');
@@ -148,6 +139,7 @@ class PatientsController extends Controller
         $report->blood_cbc = $request->get('blood_cbc');
         $report->urine = $request->get('urine');
         $report->hbs_normal = $request->get('hbs_normal');
+        $report->ct_scan = $request->get('ct_scan');
         $report->commision = $request->get('commision');
         $report->stool = $request->get('stool');
         $report->discount = $request->get('discount');
@@ -163,9 +155,9 @@ class PatientsController extends Controller
 		$commision_amount = $patient->discount;
 		if($commision<=0){
 			$commision_amount = '0';
-			return view('outdoor.show_report', compact('patient','total','commision_amount','patient_id'));
+			return view('outdoor.show_report', compact('patient','total','commision','commision_amount','patient_id'));
 		}else{
-			return view('outdoor.show_report', compact('patient','total','commision_amount','patient_id'));
+			return view('outdoor.show_report', compact('patient','total','commision','commision_amount','patient_id'));
 		}
     	
 	}

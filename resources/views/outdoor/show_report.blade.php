@@ -52,38 +52,88 @@
                         <h5>Sonaimmuri,Noakhali</h5></p>
 						<h2>Bill Report</h2>
 					</center>
-					<div class="col-md-4">
-						<p>Pateint Name : {!!ucwords($patient->patient_name)!!}</p><br>
-						<p>Father's Name : {!!$patient->father_name!!}</p><br>
-						<p>Consulting Dr. Name : {!!$patient->consult_dr!!}</p><br>
-						<p>Pateint ID : {!!$patient->patient_id!!}</p><br>
-						<p>Address : {!!$patient->address!!}</p><br>
-						<p>Mobile : {!!$patient->phone_number!!}</p><br>
-						<p>Gender : {!!$patient->gender!!}</p><br>
-						<p>Age : {!!$patient->age!!}</p><br>
-						
-					</div>
-					<div class="col-md-4">
-						<p>Admission Date : {!!$patient->admission_date!!}</p><br>
-						<p>Ref.By Dr. : {!!$patient->reffered_dr!!}</p><br>
-						<p>Digital X-Ray : {!!$patient->digital_xray!!} Tk.</p><br>
-						<p>4D Ultrasonogram : {!!$patient->ultrasonogram!!} Tk.</p><br>
-						<p>ECG : {!!$patient->ecg!!} Tk.</p><br>
-						<p>Digital ECG : {!!$patient->digital_ecg!!} Tk.</p><br>
-						<p>Endoscopy/Colonoscopy : {!!$patient->endoscopy!!} Tk.</p><br>
-						<p>Blood Grouping : {!!$patient->blood_grouping!!} Tk.</p><br>
-						
-					</div>
-					<div class="col-md-4">
-						<p>Blood For CS : {!!$patient->blood_cs!!} Tk.</p><br>
-						<p>Blood For CBC : {!!$patient->blood_cbc!!} Tk.</p><br>
-						<p>Urine Test : {!!$patient->urine!!} Tk.</p><br>
-						<p>HBS Ag(Normal) : {!!$patient->hbs_normal!!} Tk.</p><br>
-						<p>Stool Test : {!!$patient->stool!!} Tk.</p><br>
-						<p>Commision : {!!$patient->commision!!}%</p><br>
-						<p>Discount : {!! $commision_amount !!} Tk.</p><br>
-						<p>Total Bill : {!!$total!!} Tk.</p><br>
-						<button onclick="myFunction()">Print this page</button><br><br>
+					<div class="col-md-12">
+						<table class="table">
+							<tr>
+								<td class="info">Pateint Name</td>
+								<td class="success">{!!ucwords($patient->patient_name)!!}</td>
+								<td class="info">Father's Name</td>
+								<td class="success">{!!$patient->father_name!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Consulting Dr. Name</td>
+								<td class="success">{!!$patient->consult_dr!!}</td>
+								<td class="info">Pateint ID</td>
+								<td class="success">{!!$patient->patient_id!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Address</td>
+								<td class="success">{!!$patient->address!!}</td>
+								<td class="info">Mobile</td>
+								<td class="success">{!!$patient->phone_number!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Gender</td>
+								<td class="success">{!!$patient->gender!!}</td>
+								<td class="info">Age</td>
+								<td class="success">{!!$patient->age!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Admission Date</td>
+								<td class="success">{!!$patient->admission_date!!}</td>
+								<td class="info">Ref.By Dr.</td>
+								<td class="success">{!!$patient->reffered_dr!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Digital X-Ray</td>
+								<td class="success">{!!$patient->digital_xray!!} Tk.</td>
+								<td class="info">4D Ultrasonogram</td>
+								<td class="success">{!!$patient->ultrasonogram!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">ECG</td>
+								<td class="success">{!!$patient->ecg!!} Tk.</td>
+								<td class="info">Digital ECG</td>
+								<td class="success">{!!$patient->digital_ecg!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Endoscopy/Colonoscopy</td>
+								<td class="success">{!!$patient->endoscopy!!} Tk.</td>
+								<td class="info">Blood Grouping</td>
+								<td class="success">{!!$patient->blood_grouping!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Blood For CS</td>
+								<td class="success">{!!$patient->blood_cs!!} Tk.</td>
+								<td class="info">Blood For CBC</td>
+								<td class="success">{!!$patient->blood_cbc!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Urine Test</td>
+								<td class="success">{!!$patient->urine!!} Tk.</td>
+								<td class="info">HBS Ag(Normal)</td>
+								<td class="success">{!!$patient->hbs_normal!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">CT Scan</td>
+								<td class="success">{!!$patient->ct_scan!!} Tk.</td>
+								<td class="info">Stool Test</td>
+								<td class="success">{!!$patient->stool!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Commision</td>
+								<td class="success">{!!$commision!!}%</td>
+								<td class="info">Discount</td>
+								<td class="success">{!! $commision_amount !!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info"></td>
+								<td class="success"></td>
+								<td class="info">Total Bill</td>
+								<td class="success">{!!$total!!} Tk.</td>
+							</tr>
+						</table>
+							<button onclick="myFunction()" style="margin-left:1030px;">Print this page</button><br><br>
 					</div>
 				</div>
 			</div>

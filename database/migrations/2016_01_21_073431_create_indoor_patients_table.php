@@ -15,7 +15,7 @@ class CreateIndoorPatientsTable extends Migration
         Schema::create('indoor_patients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('patient_name', 100);
-            $table->string('ind_patient_id', 50);
+            $table->string('ind_patient_id', 50)->unique();
             $table->string('father_name', 100);
             $table->string('consult_dr', 100);
             $table->string('address', 255);

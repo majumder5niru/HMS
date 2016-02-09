@@ -52,7 +52,7 @@
                         <h5>Sonaimuri,Noakhali</h5></p>
 						<h2>Total Bill Report({!!$starting_date!!} to {!!$ending_date!!})</h2><br>
 					</center>
-					<div class="col-md-12">
+					<div class="col-md-7 col-md-offset-3">
 						<table class="table">
                         <thead>
                             <tr>
@@ -75,7 +75,7 @@
                                 </tr>
                         </tbody>
                     </table>
-                    <button onclick="myFunction()" style="margin-left:1030px;">Print this page</button>
+                    <button onclick="myFunction()" class="pull-right">Print this page</button>
 					</div>
 				</div>
 			</div>

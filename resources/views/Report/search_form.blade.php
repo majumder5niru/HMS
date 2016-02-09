@@ -11,23 +11,15 @@
 	    
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
-		 	#date{
-				width:250px;
-				}
-			.input-group.input-append.date {
-		  		width: 250px;
-			}
+		 	
 		 </style>
 	</head>
 	<body>
@@ -57,7 +49,8 @@
 					</nav>
 				</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4"></div>
+				<div class="col-md-3 col-md-offset-1">
 					<form action="{!! action('ReportsController@search_option') !!}" method="post">
 						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 							@if (isset($errors) && $errors->any())
@@ -111,7 +104,7 @@
 						</div>
 					</form>	
 				</div>
-				<div class="col-md-6"></div>
+				<div class="col-md-4"></div>
 			</div>	
 		</div>
 	</div>

@@ -29,22 +29,20 @@
 	    </script>
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
+		 	
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
 		 	#date{
-				width:250px;
+				width:100%;
 				}
 			.input-group.input-append.date {
-		  		width: 250px;
+		  		width: 100%;
 			}
 		 </style>
 	</head>
@@ -69,23 +67,20 @@
 					  </div>
 					</nav>
 				</div>
-			<div class="row">
-				<div class="col-md-6">
+			<div class="row">	
+				<div class="col-md-3 col-md-offset-5">
 					<form action="{!! action('ReportsController@indoor_test_summary_range') !!}" method="post">
-						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-							@if (isset($errors) && $errors->any())
-	   							@foreach ($errors->all() as $error)
-	        						<p class="alert alert-danger">{{ $error }}</p>
-	    						@endforeach
-							@endif
-							@if (session('status'))
-    							<div class="alert alert-success">
-        							{{ session('status') }}
-    							</div>
-							@endif
-					
-				</div>
-				<div class="col-md-6">	
+							<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+								@if (isset($errors) && $errors->any())
+		   							@foreach ($errors->all() as $error)
+		        						<p class="alert alert-danger">{{ $error }}</p>
+		    						@endforeach
+								@endif
+								@if (session('status'))
+	    							<div class="alert alert-success">
+	        							{{ session('status') }}
+	    							</div>
+								@endif	
 					<div class="form-group">
 						<label class="allLabel">From</label>
 						<div class="input-group input-append date" id="datePicker">

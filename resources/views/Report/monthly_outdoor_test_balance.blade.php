@@ -51,24 +51,52 @@
                         <h5>Sonaimuri,Noakhali</h5></p>
 						<h2>Monthly Outdoor Test Report (Month:{!!$month!!})</h2>
 					</center>
-					<div class="col-md-6">
-						<p>Year : {!!$year!!} </p><br>
-						<p>Month : {!!$month!!} </p><br>
-						<p>Digital X-Ray : {!!$xray!!} Tk.</p><br>
-						<p>Ultrasonogram : {!!$ultrasonogram!!} Tk.</p><br>
-						<p>Ecg : {!!$ecg!!} Tk.</p><br>
-						<p>Digital Ecg : {!!$digital_ecg!!} Tk.</p><br>
-						<p>Endoscopy : {!!$endoscopy!!} Tk.</p><br>
-					</div>
-					<div class="col-md-6">
-						<p>Blood Grouping : {!!$blood_grouping!!} Tk.</p><br>
-						<p>Blood For CBC : {!!$blood_cbc!!} Tk.</p><br>
-						<p>Blood For CS : {!!$blood_cs!!} Tk.</p><br>
-						<p>Urine : {!!$urine!!} Tk.</p><br>
-						<p>HBS Normal : {!!$hbs_normal!!} Tk.</p><br>
-						<p>CT Scan : {!!$ct_scan!!} Tk.</p><br>
-						<p>Stool : {!!$stool!!} Tk.</p><br>
-						<button onclick="myFunction()" >Print this page</button>
+					<div class="col-md-12">
+						<table class="table">
+							<tr>
+								<td class="info">Year</td>
+								<td class="success">{!!$year!!}</td>
+								<td class="info">Month</td>
+								<td class="success">{!!$month!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Digital X-Ray </td>
+								<td class="success">{!!$xray!!} Tk.</td>
+								<td class="info">Ultrasonogram</td>
+								<td class="success">{!!$ultrasonogram!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Ecg</td>
+								<td class="success">{!!$ecg!!} Tk.</td>
+								<td class="info">Digital Ecg</td>
+								<td class="success">{!!$digital_ecg!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Endoscopy</td>
+								<td class="success">{!!$endoscopy!!} Tk.</td>
+								<td class="info">Blood Grouping</td>
+								<td class="success">{!!$blood_grouping!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Blood For CBC</td>
+								<td class="success">{!!$blood_cbc!!} Tk.</td>
+								<td class="info">Blood For CS</td>
+								<td class="success">{!!$blood_cs!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">Urine</td>
+								<td class="success">{!!$urine!!} Tk.</td>
+								<td class="info">HBS Normal</td>
+								<td class="success">{!!$hbs_normal!!} Tk.</td>
+							</tr>
+							<tr>
+								<td class="info">CT Scan</td>
+								<td class="success">{!!$ct_scan!!} Tk.</td>
+								<td class="info">Stool</td>
+								<td class="success">{!!$stool!!} Tk.</td>
+							</tr>
+						</table>
+						<button onclick="myFunction()" class="pull-right">Print this page</button>
 					</div>
 				</div>
 			</div>

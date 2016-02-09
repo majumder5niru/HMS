@@ -51,17 +51,36 @@
 						<p><h4>The Lab Aid Medical Center and Hospital</h4>
 						<h5>Sonaimuri,Noakhali</h5></p><h2>Doctor's Information</h2><br>
 					</center>
-					<div class="col-md-4"></div>
-					<div class="col-md-4">
-						<p>Doctor's Name : {!!$doctor->dr_name!!}</p><br>
-						<p>Doctor's ID : {!!$doctor->dr_id!!}</p><br>
-						<p>Designation : {!!$doctor->designation!!}</p><br>
-						<p>Address : {!!$doctor->address!!}</p><br>
-						<p>Mobile : {!!$doctor->phone_number!!}</p><br>
-						<p>Gender : {!!$doctor->gender!!}</p><br>
-						<p>About Dr. : {!!$doctor->about_dr!!}</p><br>	
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<table class="table">
+							<tr>
+								<td class="info">Doctor's Name</td>
+								<td class="success">{!!$doctor->dr_name!!}</td>
+								<td class="info">Doctor's ID</td>
+								<td class="success">{!!$doctor->dr_id!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Designation </td>
+								<td class="success">{!!$doctor->designation!!}</td>
+								<td class="info">Address</td>
+								<td class="success">{!!$doctor->address!!}</td>
+							</tr>
+							<tr>
+								<td class="info">Mobile</td>
+								<td class="success">{!!$doctor->phone_number!!}</td>
+								<td class="info">Gender</td>
+								<td class="success">{!!$doctor->gender!!}</td>
+							</tr>
+							<tr>
+								<td class="info">About Dr.</td>
+								<td class="success">{!!$doctor->about_dr!!}</td>
+								<td class="info"></td>
+								<td class="success"></td>
+							</tr>
+						</table>
 					</div>
-					<div class="col-md-4"></div>
+					<div class="col-md-2"></div>
 				</div>
 			</div>
 	</body>

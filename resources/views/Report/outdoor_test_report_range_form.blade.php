@@ -29,7 +29,7 @@
 	    </script>
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
@@ -38,13 +38,13 @@
 	  			padding-right: 31px;
 			}
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
 		 	#date{
-				width:250px;
+				width:100%;
 				}
 			.input-group.input-append.date {
-		  		width: 250px;
+		  		width: 100%;
 			}
 		 </style>
 	</head>
@@ -85,7 +85,7 @@
 							@endif
 					
 				</div>
-				<div class="col-md-6">	
+				<div class="col-md-3 col-md-offset-5">	
 					<div class="form-group">
 						<label class="allLabel">From</label>
 						<div class="input-group input-append date" id="datePicker">

@@ -31,22 +31,20 @@
 	    </script>
 		 <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
+		 	
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
 		 	#date{
-				width:250px;
+				width:100%;
 				}
 			.input-group.input-append.date {
-		  		width: 250px;
+		  		width: 100%;
 			}
 		 	
 		 </style>
@@ -75,7 +73,7 @@
 					</nav>
 				</div>
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<form action = "{!! action('IpatientsController@update_indoor_report',$indoor_report->id) !!}" method="post">
 								<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 									@if (isset($errors) && $errors->any())
@@ -89,8 +87,8 @@
     									</div>
 									@endif
 								<div class="form-group">
-									<label class="allLabel">Patient Name *</label>
-									<input type="text" name="patient_name" class="form-control" value="{!! $indoor_report->patient_name !!}" >
+									<label class="allLabel">Patient Name*</label>
+									<input type="text" name="patient_name" class="form-control" value="{!! $indoor_report->patient_name !!}" required>
 								</div>
 								<div class="form-group">
 									<label class="allLabel">Father's Name</label>
@@ -106,8 +104,8 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label class="allLabel">Patient Id *</label>
-									<input type="text" name="ind_patient_id" class="form-control" value="{!! $indoor_report->ind_patient_id !!}">
+									<label class="allLabel">Patient Id*</label>
+									<input type="text" name="ind_patient_id" class="form-control" value="{!! $indoor_report->ind_patient_id !!}" required>
 								</div>
 								<div class="form-group">
 									<label class="allLabel">Address</label>
@@ -186,14 +184,14 @@
 									<input type="text" name="arrival_time" class="form-control" value="{!! $indoor_report->arrival_time!!}">
 								</div>
 								<div class="form-group">
-									<label class="allLabel">Arrival Date *</label>
+									<label class="allLabel">Arrival Date*</label>
 									<div class="input-group input-append date" id="datePicker">
-				                		<input type="text" name="arrival_date" class="form-control" id = "date" value="{!! $indoor_report->arrival_date !!}">
+				                		<input type="text" name="arrival_date" class="form-control" id = "date" value="{!! $indoor_report->arrival_date !!}" required>
 				                		<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
 				            		</div>
 								</div>		
 				</div>
-				<div class="col-md-4" id="div1">
+				<div class="col-md-3 col-md-offset-1" id="div1">
 					
 					<div class="form-group">
 						<input type="hidden" name="digital_xray" value="0">
@@ -234,7 +232,7 @@
 						<input type="checkbox" name="stool"  value="450" <?php if($stool== "450") { echo 'checked="checked"'; } ?>> Stool Test
 					</div>	
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3 col-md-offset-1">
 					<div class="form-group">
 						<label class="allLabel">Operation Bill</label>
 						<input type="number" name="operation_bill" class="form-control" value="{!! $indoor_report->operation_bill !!}">

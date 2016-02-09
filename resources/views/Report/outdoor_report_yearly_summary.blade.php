@@ -91,7 +91,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <button onclick="myFunction()" style="margin-left:1030px;">Print this page</button>
+                    <button onclick="myFunction()" class="pull-right">Print this page</button>
 					</div>
 				</div>
 			</div>

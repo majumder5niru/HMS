@@ -11,23 +11,16 @@
         <link rel="stylesheet" href="{!! asset('assets/bootstrap/css/bootstrap.min.css') !!}">
         <style>
 		 	.form-control{
-		 		width:250px;
+		 		width:100%;
 		 	}
 		 	.allLabel{
 		 		color:#009999;
 		 	}
-		 	.radio > label {
-	  			padding-right: 31px;
-			}
+		 	
 			.btn-primary{
-				width:250px;
+				width:100%;
 			}
-			#date{
-				width:250px;
-			}
-			.input-group.input-append.date {
-	  			width: 250px;
-			}
+			
 			h2 {
     			color: #008000;
     			font-family: Comic Sans MS;
@@ -66,7 +59,8 @@
 			</nav>
 		</div>
 		<div class="row">
-				<div class="col-md-12">
+			<div class="col-md-4"></div>
+				<div class="col-md-3 col-md-offset-1">
 					<center class = "header">
 							<h2>The Lab Aid Medical Center and Hospital</h2>
 							<h3>Sonaimuri,Noakhali</h3><br><br>
@@ -95,6 +89,7 @@
 								</div>
 						</form>	
 				</div>
+				<div class="col-md-3 col-md-offset-1"></div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">

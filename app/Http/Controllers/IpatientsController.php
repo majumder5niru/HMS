@@ -111,8 +111,7 @@ class IpatientsController extends Controller
 			return view('Indoor.edit_report',  compact('indoor_report','total','commision_amount','gender','ind_patient_id','xray','ultra','ecg','decg','endoccopy','bloodgrp','bloodcs','bloodcbc','urine','hbsnrmal','ctscan','stool','doctors','id'));
 		}
     }
-   public function update_indoor_report($id, IpatientFormRequest $request){
-		
+   public function update_indoor_report($id, Request $request){
         $indoor_report = Indoor_patient::whereId($id)->firstOrFail();
 		$indoor_report->patient_name = strtolower($request->get('patient_name'));
 		$indoor_report->ind_patient_id = $request->get('ind_patient_id');

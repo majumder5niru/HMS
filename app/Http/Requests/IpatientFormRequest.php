@@ -25,7 +25,7 @@ class IpatientFormRequest extends Request
     {
         return [
             'patient_name' => 'required',
-            'ind_patient_id'=> 'required',
+            'ind_patient_id'=> 'required|unique:indoor_patients',
             'arrival_date'=> 'required',
         ];
     }
