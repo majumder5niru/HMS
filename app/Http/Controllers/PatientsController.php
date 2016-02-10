@@ -95,26 +95,9 @@ class PatientsController extends Controller
 		$hbsnrmal = $report->hbs_normal;
 		$ctscan = $report->ct_scan;
 		$stool = $report->stool;
-		$test1 = $report->digital_xray;
-		$test2 = $report->ecg;
-		$test3 = $report->digital_ecg;
-		$test4 = $report->endoscopy;
-		$test5 = $report->blood_grouping;
-		$test6 = $report->blood_cs;
-		$test7 = $report->blood_cbc;
-		$test8 = $report->urine;
-		$test9 = $report->hbs_normal;
-		$test10 =$report->stool;
-		$total = $test1+$test2+$test3+$test4+$test5+$test6+$test7+$test8+$test9+$test10;
 		$commision = $report->commision;
-		if($commision<=0){
-			$commision_amount = '0';
-			return view('outdoor.edit_report', compact('report','total','commision_amount','gender','patient_id','xray','ultra','ecg','decg','endoccopy','bloodgrp','bloodcs','bloodcbc','urine','hbsnrmal','ctscan','stool','doctors'));
-		}else{
-			$commision_amount = ($total*$commision)/100;
-			$total = $total-$commision_amount;
-			return view('outdoor.edit_report', compact('report','total','commision_amount','gender','patient_id','xray','ultra','ecg','decg','endoccopy','bloodgrp','bloodcs','bloodcbc','urine','hbsnrmal','ctscan','stool','doctors'));
-		}
+		
+		return view('outdoor.edit_report', compact('report','gender','patient_id','xray','ultra','ecg','decg','endoccopy','bloodgrp','bloodcs','bloodcbc','urine','hbsnrmal','ctscan','stool','doctors'));	
 		
 	}
 
@@ -131,6 +114,7 @@ class PatientsController extends Controller
         $report->admission_date = $request->get('admission_date');
         $report->reffered_dr = $request->get('reffered_dr');
         $report->digital_xray = $request->get('digital_xray');
+        $report->ultrasonogram = $request->get('ultrasonogram');
         $report->ecg = $request->get('ecg');
         $report->digital_ecg = $request->get('digital_ecg');
         $report->endoscopy = $request->get('endoscopy');
@@ -142,8 +126,19 @@ class PatientsController extends Controller
         $report->ct_scan = $request->get('ct_scan');
         $report->commision = $request->get('commision');
         $report->stool = $request->get('stool');
-        $report->discount = $request->get('discount');
-        $report->total = $request->get('total');
+        $total = $report->digital_xray+$report->ultrasonogram+$report->ecg+$report->digital_ecg+$report->endoscopy+$report->blood_grouping+$report->blood_cs+$report->blood_cbc+$report->urine+$report->hbs_normal+$report->ct_scan+$report->stool;
+        
+        $report->total = $total;
+        if($report->commision<=0){
+        	$commision_amount = 0;
+        	$report->discount = 0;
+        	$report->total = $total;
+        }else{
+        	$commision_amount = ($total*$report->commision)/100;
+        	$total = $total-$commision_amount;
+        	$report->discount = $commision_amount;
+        	$report->total = $total;
+        }
         $report->save();
         return redirect(action('PatientsController@show_report', $report->patient_id))->with('status', 'The data  has been updated!');
 	}

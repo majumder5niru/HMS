@@ -1,113 +1,44 @@
-<!DOCTYPE HTml>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link href="css/bootstrap.min.css" rel="stylesheet">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
-	    <link rel="stylesheet" href="{!! asset('assets/bootstrap/css/bootstrap.min.css') !!}">
-	    <link href="{!! asset('css/datepicker.css') !!}" rel="stylesheet">
-	    <script src="{!! asset('js/bootstrap-datepicker.js') !!}"></script>
-	    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
-	    <script>
-		    $(function(){
-		        $('#datePicker')
-		            .datepicker({
-		            format: 'yyyy/mm/dd'
-		        })
-		    });
-	    </script>
-	    <script>
-		    $(function(){
-		        $('#datePicker1')
-		            .datepicker({
-		            format: 'yyyy/mm/dd'
-		        })
-		    });
-	    </script>
-		 <style>
-		 	.form-control{
-		 		width:100%;
-		 	}
-		 	.allLabel{
-		 		color:#009999;
-		 	}
-		 	
-			.btn-primary{
-				width:100%;
-			}
-		 	#date{
-				width:100%;
-				}
-			.input-group.input-append.date {
-		  		width: 100%;
-			}
-		 </style>
-	</head>
-	<body>
-		<div class="well">
-			<div class="container">
-				<div class="row">
-					<nav class="navbar navbar-default">
-					  <div class="container-fluid">
-					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					      <ul class="nav navbar-nav">
-					      	<li><a href = "{!! action('PatientsController@index') !!}">Home</a></li>
-					      	<li><a href = "{!! action('PatientsController@create_patient') !!}">Outdoor Patient Registration</a></li>
-					        <li><a href = "{!! action('PatientsController@show_all_report') !!}">Outdoor Patient List </a></li>
-					        <li><a href = "{!! action('IpatientsController@create_indoor_patient') !!}">Indoor Patient Registration</a></li>
-					        <li><a href = "{!! action('IpatientsController@show_all_report') !!}">Indoor Patient List </a></li>
-					        <li><a href = "{!! action('DoctorsController@create_doctor') !!}">Add Doctor </a></li>
-					        <li><a href = "{!! action('DoctorsController@show_all_dr') !!}">Doctor's List </a></li>
-					        <li><a href = "{!! action('ReportsController@search_form') !!}"> Bill Report </a></li>
-					      </ul> 
-					      <ul class="nav navbar-nav navbar-right">
-					      <li><a href="#">Log Out </a></li>
-					      </ul>
-					    </div>
-					  </div>
-					</nav>
-				</div>
-			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-3 col-md-offset-1">
-					<form action="{!! action('ReportsController@total_bill_range_report') !!}" method="post">
-						<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-							@if (isset($errors) && $errors->any())
-	   							@foreach ($errors->all() as $error)
-	        						<p class="alert alert-danger">{{ $error }}</p>
-	    						@endforeach
-							@endif
-							@if (session('status'))
-    							<div class="alert alert-success">
-        							{{ session('status') }}
-    							</div>
-							@endif
-							<div class="form-group">
-								<label class="allLabel">From</label>
-								<div class="input-group input-append date" id="datePicker">
-			                		<input type="text" name="starting_date" class="form-control" id = "date"value="{{Request::old('starting_date')}}">
-			                		<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-			            		</div>
-							</div>
-							<div class="form-group">
-								<label class="allLabel">To</label>
-								<div class="input-group input-append date" id="datePicker1">
-			                		<input type="text" name="ending_date" class="form-control" id = "date"value="{{Request::old('ending_date')}}">
-			                		<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-			            		</div>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary">Submit</button>
-							</div>	
-							</form>
-				</div>
-				<div class="col-md-3 col-md-offset-1"></div>
-			</div>	
-		</div>
-	</div>
+@extends('master/master')
 	
-	</body>	
-</html>
+		<div class="container nav">
+			<div class="row">
+				@include('master/navbar')
+			</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3 col-md-offset-1">
+				<form action="{!! action('ReportsController@total_bill_range_report') !!}" method="post">
+					<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+						@if (isset($errors) && $errors->any())
+   							@foreach ($errors->all() as $error)
+        						<p class="alert alert-danger">{{ $error }}</p>
+    						@endforeach
+						@endif
+						@if (session('status'))
+							<div class="alert alert-success">
+    							{{ session('status') }}
+							</div>
+						@endif
+						<div class="form-group">
+							<label class="allLabel">From</label>
+							<div class="input-group input-append date" id="datePicker">
+		                		<input type="text" name="starting_date" class="form-control" id = "date"value="{{Request::old('starting_date')}}">
+		                		<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+		            		</div>
+						</div>
+						<div class="form-group">
+							<label class="allLabel">To</label>
+							<div class="input-group input-append date" id="datePicker1">
+		                		<input type="text" name="ending_date" class="form-control" id = "date"value="{{Request::old('ending_date')}}">
+		                		<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+		            		</div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>	
+						</form>
+			</div>
+			<div class="col-md-3 col-md-offset-1"></div>
+		</div>	
+	</div>
+
