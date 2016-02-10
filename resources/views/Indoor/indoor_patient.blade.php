@@ -112,48 +112,63 @@
 									<input type="text" name="reffered_dr" class="form-control" value="{{Request::old('reffered_dr')}}">
 							</div>			
 			</div>
-			<div class="col-md-3 col-md-offset-1" id="div1" >
-				
-				<div class="form-group">
-					<input type="hidden" name="digital_xray" value="0">
-					<input type="checkbox" name="digital_xray"  value="400" <?php if(Request::old('digital_xray')== "400") { echo 'checked="checked"'; } ?>> Digital X-Ray &nbsp;
-					<input type="hidden" name="ultrasonogram" value="0">
-					<input type="checkbox" name="ultrasonogram"  value="300" <?php if(Request::old('ultrasonogram')== "300") { echo 'checked="checked"'; } ?>> 4D Ultrasonogram
+			<div class="col-md-5 col-md-offset-1" id="div1" >
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="hidden" name="digital_xray" value="0">
+							<input type="checkbox" name="digital_xray"  value="400" <?php if(Request::old('digital_xray')== "400") { echo 'checked="checked"'; } ?>> Digital X-Ray &nbsp;
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="ultrasonogram" value="0">
+							<input type="checkbox" name="ultrasonogram"  value="300" <?php if(Request::old('ultrasonogram')== "300") { echo 'checked="checked"'; } ?>> 4D Ultrasonogram
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="ecg" value="0">
+							<input type="checkbox" name="ecg"  value="800" <?php if(Request::old('ecg')== "800") { echo 'checked="checked"'; } ?>> ECG &nbsp;
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="digital_ecg" value="0">
+							<input type="checkbox" name="digital_ecg"  value="1000" <?php if(Request::old('digital_ecg')== "1000") { echo 'checked="checked"'; } ?>> Digital ECG
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="endoscopy" value="0">
+							<input type="checkbox" name="endoscopy"  value="1000" <?php if(Request::old('endoscopy')== "1000") { echo 'checked="checked"'; } ?>> Endoscopy/Colonoscopy &nbsp;
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="blood_grouping" value="0">
+							<input type="checkbox" name="blood_grouping"  value="150" <?php if(Request::old('blood_grouping')== "150") { echo 'checked="checked"'; } ?>> Blood Grouping
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="hidden" name="blood_cs" value="0">
+							<input type="checkbox" name="blood_cs"  value="300" <?php if(Request::old('blood_cs')== "300") { echo 'checked="checked"'; } ?>> Blood For CS &nbsp;
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="blood_cbc" value="0">
+							<input type="checkbox" name="blood_cbc"  value="350" <?php if(Request::old('blood_cbc')== "350") { echo 'checked="checked"'; } ?>> Blood For CBC
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="urine" value="0">
+							<input type="checkbox" name="urine"  value="200" <?php if(Request::old('urine')== "200") { echo 'checked="checked"'; } ?>> Urine Test &nbsp;
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="hbs_normal" value="0">
+							<input type="checkbox" name="hbs_normal"  value="250" <?php if(Request::old('hbs_normal')== "250") { echo 'checked="checked"'; } ?>> HBS Ag(Normal)
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="ct_scan" value="0">
+							<input type="checkbox" name="ct_scan"  value="1000" <?php if(Request::old('ct_scan')== "1000") { echo 'checked="checked"'; } ?>> CT Scan &nbsp;
+						</div>
+						<div class="form-group">
+							<input type="hidden" name="stool" value="0">
+							<input type="checkbox" name="stool"  value="450" <?php if(Request::old('stool')== "450") { echo 'checked="checked"'; } ?>> Stool Test
+						</div>
+					</div>
 				</div>
-				<div class="form-group">
-					<input type="hidden" name="ecg" value="0">
-					<input type="checkbox" name="ecg"  value="800" <?php if(Request::old('ecg')== "800") { echo 'checked="checked"'; } ?>> ECG &nbsp;
-					<input type="hidden" name="digital_ecg" value="0">
-					<input type="checkbox" name="digital_ecg"  value="1000" <?php if(Request::old('digital_ecg')== "1000") { echo 'checked="checked"'; } ?>> Digital ECG	
-				</div>
-					<div class="form-group">
-					<input type="hidden" name="endoscopy" value="0">
-					<input type="checkbox" name="endoscopy"  value="1000" <?php if(Request::old('endoscopy')== "1000") { echo 'checked="checked"'; } ?>> Endoscopy/Colonoscopy &nbsp;
-					<input type="hidden" name="blood_grouping" value="0">
-					<input type="checkbox" name="blood_grouping"  value="150" <?php if(Request::old('blood_grouping')== "150") { echo 'checked="checked"'; } ?>> Blood Grouping
-				</div>
-				<div class="form-group">
-					<input type="hidden" name="blood_cs" value="0">
-					<input type="checkbox" name="blood_cs"  value="300" <?php if(Request::old('blood_cs')== "300") { echo 'checked="checked"'; } ?>> Blood For CS &nbsp;
-					<input type="hidden" name="blood_cbc" value="0">
-					<input type="checkbox" name="blood_cbc"  value="350" <?php if(Request::old('blood_cbc')== "350") { echo 'checked="checked"'; } ?>> Blood For CBC
-				</div>
-				
-				<div class="form-group">
-					<input type="hidden" name="urine" value="0">
-					<input type="checkbox" name="urine"  value="200" <?php if(Request::old('urine')== "200") { echo 'checked="checked"'; } ?>> Urine Test &nbsp;
-					<input type="hidden" name="hbs_normal" value="0">
-					<input type="checkbox" name="hbs_normal"  value="250" <?php if(Request::old('hbs_normal')== "250") { echo 'checked="checked"'; } ?>> HBS Ag(Normal)
-				</div>
-				
-				<div class="form-group">
-					<input type="hidden" name="ct_scan" value="0">
-					<input type="checkbox" name="ct_scan"  value="1000" <?php if(Request::old('ct_scan')== "1000") { echo 'checked="checked"'; } ?>> CT Scan &nbsp;
-					<input type="hidden" name="stool" value="0">
-					<input type="checkbox" name="stool"  value="450" <?php if(Request::old('stool')== "450") { echo 'checked="checked"'; } ?>> Stool Test
-				</div>	
 			</div>
-			<div class="col-md-3 col-md-offset-1">
+			<div class="col-md-3 ">
 				<div class="form-group">
 					<label class="allLabel">Operation Bill</label>
 					<input type="number" name="operation_bill" class="form-control" value="{{Request::old('operation_bill')}}">

@@ -4,8 +4,8 @@
         @include('master/navbar')
     </div>
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
+		
+		<div class="col-md-12">
 			<center>
                 <p><h4>The Lab Aid Medical Center and Hospital</h4>
                 <h5>Sonaimuri,Noakhali</h5></p>
@@ -46,6 +46,6 @@
             </table>
           
 		</div>
-		<div class="col-md-2"></div>
+		
 	</div>
 </div>

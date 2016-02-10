@@ -72,19 +72,19 @@
 			</div>
 				<div class="col-md-5 col-md-offset-3 date" id="div1">
 					<div class="col-md-8 pl0 pr0">
-					<div class="form-group">
-						<label class="allLabel">Admission Date*</label>
-						<div class="input-group input-append date" id="datePicker">
-	            			<input type="text" name="admission_date" class="form-control" id = "date"value="{{Request::old('admission_date')}}">
-	            			<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-	        			</div>
-					</div>
+						<div class="form-group">
+							<label class="allLabel">Admission Date*</label>
+							<div class="input-group input-append date" id="datePicker">
+		            			<input type="text" name="admission_date" class="form-control" id = "date"value="{{Request::old('admission_date')}}">
+		            			<span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+		        			</div>
+						</div>
 					</div>
 				<div class="col-md-8 pl0 pr0">
-				<div class="form-group">
-					<label class="allLabel">Ref.By Dr.</label>
-					<input type="text" name="reffered_dr" class="form-control" value="{{Request::old('reffered_dr')}}">
-				</div>
+					<div class="form-group">
+						<label class="allLabel">Ref.By Dr.</label>
+						<input type="text" name="reffered_dr" class="form-control" value="{{Request::old('reffered_dr')}}">
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -141,15 +141,15 @@
 					</div>
 				</div>
 				<div class="col-md-8 pl0 pr0">
-				<div class="form-group">
-					<label class="allLabel">Commision(%)</label>
-					<input type="number" name="commision" class="form-control" value="{{Request::old('commision')}}">
-				</div>
+					<div class="form-group">
+						<label class="allLabel">Commision(%)</label>
+						<input type="number" name="commision" class="form-control" value="{{Request::old('commision')}}">
+					</div>
 				</div>
 				<div class="col-md-8 pl0 pr0">
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
 				</div>
 			</div>
 			</form>
